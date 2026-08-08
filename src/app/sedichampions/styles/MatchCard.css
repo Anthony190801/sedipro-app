@@ -1,0 +1,181 @@
+/* ============================================================================
+ * MatchCard.css — Tarjeta de partido con equipos apilados verticalmente
+ * ============================================================================ */
+
+.match-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-width: 280px;
+  min-height: 70px;
+  padding: 0.5rem 0.875rem 0.5rem 1.125rem;
+  /* Glassmorphism blanco minimalista */
+  background: rgba(255, 255, 255, 0.21);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.274);
+  border-radius: 2.5rem;
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  font-family: var(--font-poppins, 'Poppins', sans-serif);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease,
+    background 0.2s ease;
+  cursor: default;
+}
+
+.match-card--clickable {
+  cursor: pointer;
+}
+
+.match-card--clickable:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* === Cabecera: hora (izq) y cancha (der) === */
+
+.match-card__meta {
+  position: absolute;
+  top: 0.3rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  z-index: 1;
+}
+
+.match-card__time {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--color-secondary-light, #A8B8D8);
+  letter-spacing: 0.03em;
+}
+
+.match-card__court {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--color-foreground, #dae2fd);
+  opacity: 0.5;
+}
+
+/* === Contenedor de equipos apilados === */
+
+.match-card__teams {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+/* === Fila individual de equipo === */
+
+.match-card__team-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+/* === Info del equipo: punto + nombre (agrupados a la izquierda) === */
+
+.match-card__team-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 50px;
+  min-width: 0;
+  flex: 1;
+}
+
+/* === Punto de color (tamaño fijo, no se aplasta) === */
+
+.match-card__team-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+}
+
+/* === Nombre de equipo (truncado con ellipsis) === */
+
+.match-card__team-name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.25;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* === Estados de equipo === */
+
+.match-card__team--bye .match-card__team-name {
+  color: var(--color-secondary-light, #A8B8D8);
+  font-style: italic;
+}
+
+.match-card__team--bye .match-card__team-dot {
+  opacity: 0.4;
+  box-shadow: none;
+}
+
+.match-card__team--pending .match-card__team-name {
+  color: var(--color-foreground, #dae2fd);
+  opacity: 0.35;
+}
+
+/* === Winner / Loser states === */
+
+.match-card--decided {
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.25),
+    0 0 12px rgba(245, 158, 11, 0.08) inset;
+}
+
+.match-card__team--winner .match-card__team-name {
+  color: #F59E0B;
+  font-weight: 700;
+}
+
+.match-card__team--winner .match-card__team-dot {
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+}
+
+.match-card__team--loser {
+  opacity: 0.4;
+}
+
+/* === Ícono de ganador (pegado a la derecha) === */
+
+.match-card__crown {
+  font-size: 0.6875rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* === Responsive === */
+
+@media (max-width: 640px) {
+  .match-card {
+    min-width: 230px;
+    min-height: 64px;
+    padding: 0.4rem 0.75rem 0.4rem 1rem;
+  }
+
+  .match-card__team-name {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,79 @@
+/* ============================================================================
+ * RoundColumn.css — Columna vertical de una ronda del bracket
+ * ============================================================================ */
+
+.round-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-width: 280px;
+}
+
+.round-column__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+  padding: 0.125rem 0.5rem 0.5rem;
+  flex-shrink: 0;
+  z-index: 3;
+}
+
+.round-column__line {
+  flex: 1;
+  height: 1.5px;
+  background: rgba(103, 37, 119, 0.5);
+  border-radius: 1px;
+}
+
+.round-column__name {
+  font-family: var(--font-montserrat, 'Montserrat', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  margin: 0;
+  text-shadow: 0 0 12px rgba(103, 37, 119, 0.5);
+}
+
+.round-column__body {
+  /* Cubre todo el column desde top:0 para compartir
+     el mismo sistema de coordenadas Y que el SVG conector */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.round-column__match-item {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 0.5rem);
+  display: flex;
+  justify-content: center;
+}
+
+.round-column--final .round-column__name {
+  color: var(--color-warning, #F59E0B);
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 640px) {
+  .round-column {
+    min-width: 240px;
+  }
+
+  .round-column__name {
+    font-size: 0.75rem;
+  }
+
+  .round-column--final .round-column__name {
+    font-size: 0.8125rem;
+  }
+}

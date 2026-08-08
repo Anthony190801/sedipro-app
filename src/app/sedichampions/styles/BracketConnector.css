@@ -1,0 +1,14 @@
+/* ============================================================================
+ * BracketConnector.css — Líneas conectoras SVG entre rondas
+ * ============================================================================ */
+
+.bracket-connector {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+
+.bracket-connector__svg {
+  display: block;
+  overflow: visible;
+}

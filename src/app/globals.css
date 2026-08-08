@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/aspect-ratio";
+
+@theme {
+	/* COLORES DE SEDIPRO UNT */
+	--color-primary: #672577;
+	--color-primary-hover: #7C4191;
+	--color-primary-active: #4A1A5E;
+	--color-primary-light: #D6B6DF;
+
+	--color-background: #0b1326;
+	--color-foreground: #dae2fd;
+	--color-border: rgba(255, 255, 255, 0.1);
+
+	--color-secondary: #3454A1;
+	--color-secondary-hover: #4A6BB8;
+	--color-secondary-active: #1E3A5F;
+	--color-secondary-light: #A8B8D8;
+
+	--color-accent: #2B2D67;
+	--color-accent-hover: #3F425D;
+	--color-accent-dark: #1A1C3A;
+
+	--color-success: #10B981;
+	--color-success-light: #D1FAE5;
+	--color-success-dark: #065F46;
+
+	--color-warning: #F59E0B;
+	--color-warning-light: #FEF3C7;
+	--color-warning-dark: #92400E;
+
+	--color-error: #EF4444;
+	--color-error-light: #FEE2E2;
+	--color-error-dark: #991B1B;
+
+	--color-info: #3B82F6;
+	--color-info-light: #DBEAFE;
+	--color-info-dark: #1E40AF;
+
+	--color-create: #10B981;
+	--color-edit: #3B82F6;
+	--color-delete: #EF4444;
+	--color-view: #6B7280;
+
+	--font-montserrat: "Montserrat", sans-serif;
+	--font-poppins: "Poppins", sans-serif;
+
+	--shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	--shadow-modal: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+
+	--animate-fade-in: fadeIn 0.2s ease-in-out;
+	--animate-slide-down: slideDown 0.3s ease-out;
+	--animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+	0%, 100% { transform: translateY(0px); }
+	50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes slideDown {
+	0% { transform: translateY(-10px); opacity: 0; }
+	100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+	from { opacity: 0; transform: translateY(20px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+::view-transition-old(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  mask: radial-gradient(
+    circle at var(--theme-cx, 50%) var(--theme-cy, 50%),
+    transparent 0%,
+    transparent calc(var(--theme-r, 0px) - 1px),
+    black var(--theme-r, 0px),
+    black 100%
+  );
+  -webkit-mask: radial-gradient(
+    circle at var(--theme-cx, 50%) var(--theme-cy, 50%),
+    transparent 0%,
+    transparent calc(var(--theme-r, 0px) - 1px),
+    black var(--theme-r, 0px),
+    black 100%
+  );
+}
+
+::view-transition-old(root) {
+  mask: radial-gradient(
+    circle at var(--theme-cx, 50%) var(--theme-cy, 50%),
+    black 0%,
+    black calc(var(--theme-r, 0px) - 1px),
+    transparent var(--theme-r, 0px),
+    transparent 100%
+  );
+  -webkit-mask: radial-gradient(
+    circle at var(--theme-cx, 50%) var(--theme-cy, 50%),
+    black 0%,
+    black calc(var(--theme-r, 0px) - 1px),
+    transparent var(--theme-r, 0px),
+    transparent 100%
+  );
+}
+
+.skip-to-content {
+  position: fixed;
+  top: -9999px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  z-index: 9999;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  top: 20px;
+}
+
+@layer base {
+	* {
+		border-color: var(--color-border, rgba(255, 255, 255, 0.1));
+	}
+	body {
+		background-color: var(--color-background);
+		color: var(--color-foreground);
+	}
+}
+
+.animate-fadeInUp {
+	animation: fadeInUp 0.3s ease-out forwards;
+}
