@@ -5,31 +5,31 @@ export const missWorlds = [
     {
         id: 'miss-1',
         imgUrl: '/crown-night/miss/ti-miss.webp',
-        title: 'Sin candidato',
+        title: 'Jhoanny Vargas',
         area: 'TI'
     },
     {
         id: 'miss-2',
         imgUrl: '/crown-night/miss/pmo-miss.webp',
-        title: 'Sin candidato',
+        title: 'Angela Loayza',
         area: 'PMO'
     },
     {
         id: 'miss-3',
         imgUrl: '/crown-night/miss/mkt-miss.webp',
-        title: 'Sin candidato',
+        title: 'Lorena Primo',
         area: 'MKT'
     },
     {
         id: 'miss-4',
         imgUrl: '/crown-night/miss/gth-miss.webp',
-        title: 'Sin candidato',
+        title: 'Valeria Valderrama',
         area: 'GTH'
     },
     {
         id: 'miss-5',
         imgUrl: '/crown-night/miss/ltk-miss.webp',
-        title: 'Sin candidato',
+        title: 'Dalia García',
         area: 'LTK & FNZ'
     }
 ]

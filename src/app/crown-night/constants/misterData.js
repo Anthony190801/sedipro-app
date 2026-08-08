@@ -4,31 +4,31 @@ export const misterWorlds = [
     {
         id: 'mister-1',
         imgUrl: '/crown-night/mister/ti-mister.webp',
-        title: 'Sin candidato',
+        title: 'Pablo Sánchez',
         area: 'TI'
     },
     {
         id: 'mister-2',
         imgUrl: '/crown-night/mister/pmo-mister.webp',
-        title: 'Sin candidato',
+        title: 'Rodrigo Quispe',
         area: 'PMO'
     },
     {
         id: 'mister-3',
         imgUrl: '/crown-night/mister/mkt-mister.webp',
-        title: 'Sin candidato',
+        title: 'Luis Lecca',
         area: 'MKT'
     },
     {
         id: 'mister-4',
         imgUrl: '/crown-night/mister/gth-mister.webp',
-        title: 'Sin candidato',
+        title: 'José Paria',
         area: 'GTH'
     },
     {
         id: 'mister-5',
         imgUrl: '/crown-night/mister/ltk-mister.webp',
-        title: 'Sin candidato',
+        title: 'Néstor Plasencia',
         area: 'LTK & FNZ'
     }
 ]
